@@ -17,29 +17,38 @@
         //Plays Round by taking players selection and computers selection
         //Decides who is winner from the selection provided
         function playRound(playerSelection, computerSelection){
+            playerSelect = playerSelection.toLowerCase()
+            computerSelect = computerSelection.toLowerCase()
             const rock = 'Rock'.toLowerCase();
             const paper = 'Paper'.toLowerCase();
             const scissors = 'Scissors'.toLowerCase();
+            let counter = 0;
+            let compCount = 0;
 
-            if(playerSelection.toLowerCase() === rock && computerSelection.toLowerCase() != rock && computerSelection.toLowerCase() != paper){
-                return(`You win! Rock beats Scissors.`)
-            } else if(playerSelection.toLowerCase() === paper && computerSelection.toLowerCase() != paper && computerSelection.toLowerCase() != scissors){
-                return(`You win! Paper beats Rock.`)
-            } else if(playerSelection.toLowerCase() === scissors && computerSelection.toLowerCase() != scissors && computerSelection.toLowerCase() != rock){
-                return(`You win! Scissors beats Paper.`)
+            if(playerSelect === rock && computerSelect != rock && computerSelect != paper){
+                counter++;
+                return(`You win! Rock beats Scissors`)
+            } else if(playerSelect === paper && computerSelect != paper && computerSelect != scissors){
+                counter++;
+                return(`You win! Paper beats Rock`)
+            } else if(playerSelect === scissors && computerSelect != scissors && computerSelect != rock){
+                counter++;
+                return(`You win! Scissors beats Paper`)
+            } else if(playerSelect === rock && computerSelect === rock || playerSelect === paper && computerSelect === paper || playerSelect == scissors && computerSelect == scissors){
+                return(`You Tied! ${computerSelection} ties ${playerSelection}`)
             } else {
-                return(`You lose! ${computerSelection} beats ${playerSelection}.`)
+                compCount++;
+                return(`You Lose! ${computerSelection} beats ${playerSelection}`)            
             }
         }
         //Repeats the game in a loop 5 times over 
-        function game(){
+     
 
-        }
-
-        const playerSelection = prompt('Enter your Object: ')
+        const playerSelection = prompt('Enter your Object: ');
         const computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection))
-
+        console.log(playRound(playerSelection, computerSelection));
+        
+      
     </script>
 </body>
 </html>
