@@ -17,16 +17,29 @@
         //Plays Round by taking players selection and computers selection
         //Decides who is winner from the selection provided
         function playRound(playerSelection, computerSelection){
-
             const rock = 'Rock'.toLowerCase();
             const paper = 'Paper'.toLowerCase();
             const scissors = 'Scissors'.toLowerCase();
 
+            if(playerSelection.toLowerCase() === rock && computerSelection.toLowerCase() != rock && computerSelection.toLowerCase() != paper){
+                return(`You win! Rock beats Scissors.`)
+            } else if(playerSelection.toLowerCase() === paper && computerSelection.toLowerCase() != paper && computerSelection.toLowerCase() != scissors){
+                return(`You win! Paper beats Rock.`)
+            } else if(playerSelection.toLowerCase() === scissors && computerSelection.toLowerCase() != scissors && computerSelection.toLowerCase() != rock){
+                return(`You win! Scissors beats Paper.`)
+            } else {
+                return(`You lose! ${computerSelection} beats ${playerSelection}.`)
+            }
         }
+        //Repeats the game in a loop 5 times over 
+        function game(){
+
+        }
+
         const playerSelection = prompt('Enter your Object: ')
         const computerSelection = computerPlay();
-        playRound(playerSelection, computerSelection)
-        
+        console.log(playRound(playerSelection, computerSelection))
+
     </script>
 </body>
 </html>
