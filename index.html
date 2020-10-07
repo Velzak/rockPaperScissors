@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Computer player takes random parameter for turn 
+        function computerPlay(){
+            let gameItem = ['Rock', 'Paper', 'Scissors'];
+            let randomItem = gameItem[Math.floor(Math.random()*gameItem.length)];
+            return randomItem;
+        }
+
+        //Plays Round by taking players selection and computers selection
+        //Decides who is winner from the selection provided
+        function playRound(playerSelection, computerSelection){
+
+            const rock = 'Rock'.toLowerCase();
+            const paper = 'Paper'.toLowerCase();
+            const scissors = 'Scissors'.toLowerCase();
+
+        }
+        const playerSelection = prompt('Enter your Object: ')
+        const computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection)
+        
+    </script>
+</body>
+</html>
