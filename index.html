@@ -32,11 +32,9 @@
             let playerWin = 0;
             let computerWin = 0;
 
-            console.log(playRound(prompt('Rock, Paper, or Scissors?', ""), computerPlay()));
-            console.log(playRound(prompt('Rock, Paper, or Scissors?', ""), computerPlay()));
-            console.log(playRound(prompt('Rock, Paper, or Scissors?', ""), computerPlay()));
-            console.log(playRound(prompt('Rock, Paper, or Scissors?', ""), computerPlay()));
-            console.log(playRound(prompt('Rock, Paper, or Scissors?', ""), computerPlay()));
+            for(let i = 0; i < 5; i++){
+                console.log(playRound(prompt('Rock, Paper, or Scissors?', ""), computerPlay()));
+            }
 
             if (playerWin > computerWin){
                 console.log('Congrats! You won the game')
@@ -65,10 +63,10 @@
                     playerWin++;
                     return (`You win! Scissors beats Paper`)
                 } else if (playerSelect === rock && computerSelect === rock || playerSelect === paper && computerSelect === paper || playerSelect == scissors && computerSelect == scissors) {
-                    return (`You Tied! ${computerSelection} ties ${playerSelection}`)
+                    return (`You Tied! ${computerSelect} ties ${playerSelect}`)
                 } else {
                     computerWin++;
-                    return (`You Lose! ${computerSelection} beats ${playerSelection}`)
+                    return (`You Lose! ${computerSelect} beats ${playerSelect}`)
                 }
             }
         }
