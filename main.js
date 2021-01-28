@@ -50,12 +50,13 @@ function choice(playerSelection, computerSelection) {
     (playerSelection == "scissors" && computerSelection === "paper")
   ) {
     playerWin++;
-    return "won";
+    scoreHead.innerHTML = `You won!`
   } else if (playerSelection === computerSelection) {
-    return "tied";
+    scoreHead.innerHTML = `You tied!`
+
   } else {
     computerWin++;
-    return "lost";
+    scoreHead.innerHTML = `You lost!`
   }
 }
 
