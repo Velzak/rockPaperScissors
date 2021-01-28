@@ -1,28 +1,39 @@
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissors = document.querySelector('#scissors')
+
+rock.addEventListener('click', playRound)
+paper.addEventListener('click', playRound)
+scissors.addEventListener('click', playRound)
+
+
+
 function computerPlay() {
-  let random = Math.random();
-  return random <= 0.33
-    ? "Rock"
-    : random <= 0.66
-    ? "Paper"
-    : random <= 1
-    ? "Scissors"
-    : "ERROR";
+    let random = Math.random();
+    if (random < 0.33) {
+        return "Rock";
+    } else if (random < 0.66) {
+        return "Paper";
+    } else {
+        return "Scissors";
+    }
 }
 
-function playRound(playerSelection, computerSelection) {
-  return (playerSelection === "rock" && computerSelection === "Paper") ||
-    (playerSelection === "paper" && computerSelection === "Rock") ||
-    (playerSelection === "scissors" && computerSelection === "Paper")
-    ? `You win! ${playerSelection} beats ${computerSelection}`
-    : `You Lose! ${computerSelection} beats ${playerSelection}`;
+function playRound(e){
+    let computerSelection = computerPlay();
+    let playerSelection = e.target.id
+
+    let playerWin, computerWin = 0
+
+    if((playerSelection === 'rock' && computerSelection === 'Scissors') || (playerSelection === 'paper' && computerSelection === 'Rock') || (playerSelection === 'scissors' && computerSelection === 'Paper')){
+        console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+        playerWin++
+    } else {
+        computerWin++
+        console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
+    }
+    return playerWin, computerWin
 }
 
-
-let playerSelection = prompt("Enter Rock, Paper, or Scissors").toLowerCase();
-
-
-console.log(playerSelection)
-
-const computerSelection = computerPlay();
-
-console.log(playRound(playerSelection, computerSelection))
+let resultsPlayer = document.querySelector('#playWin').innerText = playerWin
+let resultsComputer = document.querySelector('#compWin').innerText = computerWin
