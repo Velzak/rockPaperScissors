@@ -20,21 +20,37 @@ function computerPlay() {
 function playRound(e) {
   let computerSelection = computerPlay().toLowerCase();
   let playerSelection = e.target.id;
+  console.log(playerSelection)
 
   choice(playerSelection, computerSelection);
+  updateResults()
+  
 }
 
-let playerWin,
-  computerWin = 0;
+let playerWin = 0
+  let computerWin = 0;
+console.log(playerWin)
+
 
 let resultsPlayer = document.querySelector("#playWin");
 let resultsComputer = document.querySelector("#compWin");
+let scoreHead = document.querySelector('#wonOrNot')
+
+function updateResults(){
+    resultsPlayer.innerHTML = playerWin
+    resultsComputer.innerHTML = computerWin
+
+    if (isGameOver()) setGameOver();
+    
+}   
+
+
 
 function choice(playerSelection, computerSelection) {
   if (
-    (playerSelection === "rock" && computerSelection === "Scissors") ||
-    (playerSelection === "paper" && computerSelection === "Rock") ||
-    (playerSelection === "scissors" && computerSelection === "Paper")
+    (playerSelection == "rock" && computerSelection === "scissors") ||
+    (playerSelection == "paper" && computerSelection === "rock") ||
+    (playerSelection == "scissors" && computerSelection === "paper")
   ) {
     console.log(`You win! ${playerSelection} beats ${computerSelection}`);
     playerWin++;
@@ -45,3 +61,12 @@ function choice(playerSelection, computerSelection) {
     computerWin++;
   }
 }
+
+function setGameOver(){
+    return playerWin > computerWin ? scoreHead.textContent = `Game over, you won!` : scoreHead.textContent = `Game over, you lost!`
+}
+
+function isGameOver(){
+    return playerWin === 5 || computerWin === 5
+}
+
