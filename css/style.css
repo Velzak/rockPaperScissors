@@ -3,18 +3,62 @@
 /*******************************************/
 
 /* Box Model Hack */
-*{
-    box-sizing: border-box;
-  }
-  
-  /******************************************
+* {
+  box-sizing: border-box;
+}
+
+/******************************************
   /* LAYOUT
   /*******************************************/
- 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5rem auto;
+}
 
-  
-  
-  /******************************************
+#outerBox {
+  padding: 5rem;
+  border: 3px solid black;
+  border-radius: 2rem;
+  background: cornsilk;
+}
+
+#titleResult,
+#whoWins {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+#whoWins {
+  font-size: 2rem;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.roundWins {
+  display: flex;
+}
+.roundWins h2 {
+  margin: 0 1rem;
+}
+
+button {
+  font-size: 2rem;
+  margin: 0 1rem;
+  width: 10rem;
+  border-radius: 1rem;
+}
+
+/******************************************
   /* ADDITIONAL STYLES
   /*******************************************/
-  

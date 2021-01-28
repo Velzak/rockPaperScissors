@@ -10,17 +10,29 @@
 </head>
 
 <body>
-    <section> 
-        <button id="rock" value="rock">Rock</button>
-        <button id="paper" value="paper">Paper</button>
-        <button id="scissors" value="scissors">Scissors</button>
-    </section>
-    <h1 id="wonOrNot"></h1>
-    <h1 id="title">Results</h1>
-    <section>
-        <h1 id="results"></h1>
-        <h2 id="playWin"></h2>
-        <h2 id="compWin"></h2>
+    <section id="outerBox">
+        <section id="buttons">
+            <button id="rock" value="rock">Rock</button>
+            <button id="paper" value="paper">Paper</button>
+            <button id="scissors" value="scissors">Scissors</button>
+        </section>
+        <section id="titleResult">
+            <h1 id="wonOrNot"></h1>
+            <h1 id="title">First to five wins!</h1>
+        </section>
+        
+        <section id="whoWins">
+            <h1 id="results">Results</h1>
+            <section class="roundWins">
+                <h2>Player Wins:  </h2>
+                <h2 id="playWin">0</h2>
+            </section>
+            <section class="roundWins">
+                <h2>Computer Wins: </h2>
+                <h2 id="compWin">0</h2>
+
+            </section>
+        </section>
     </section>
 
 
