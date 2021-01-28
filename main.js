@@ -20,31 +20,28 @@ function computerPlay() {
 function playRound(e) {
   let computerSelection = computerPlay().toLowerCase();
   let playerSelection = e.target.id;
-  console.log(playerSelection)
+  console.log(playerSelection);
 
   choice(playerSelection, computerSelection);
-  updateResults()
-  
+  updateResults();
 }
 
-let playerWin = 0
-  let computerWin = 0;
-console.log(playerWin)
-
+let playerWin = 0;
+let computerWin = 0;
 
 let resultsPlayer = document.querySelector("#playWin");
 let resultsComputer = document.querySelector("#compWin");
-let scoreHead = document.querySelector('#wonOrNot')
+let scoreHead = document.querySelector("#wonOrNot");
 
-function updateResults(){
-    resultsPlayer.innerHTML = playerWin
-    resultsComputer.innerHTML = computerWin
+function updateResults() {
+  resultsPlayer.innerHTML = playerWin;
+  resultsComputer.innerHTML = computerWin;
 
-    if (isGameOver()) setGameOver();
-    
-}   
-
-
+  if (isGameOver()){
+    setGameOver();
+    alert('Game over! Refresh the page to play again!')
+  } 
+}
 
 function choice(playerSelection, computerSelection) {
   if (
@@ -62,11 +59,12 @@ function choice(playerSelection, computerSelection) {
   }
 }
 
-function setGameOver(){
-    return playerWin > computerWin ? scoreHead.textContent = `Game over, you won!` : scoreHead.textContent = `Game over, you lost!`
+function setGameOver() {
+  return playerWin > computerWin
+    ? (scoreHead.textContent = `Game over, you won!`)
+    : (scoreHead.textContent = `Game over, you lost!`);
 }
 
-function isGameOver(){
-    return playerWin === 5 || computerWin === 5
+function isGameOver() {
+  return playerWin === 5 || computerWin === 5;
 }
-
