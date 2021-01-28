@@ -8,70 +8,7 @@
 </head>
 
 <body>
-    <script>
-
-        let computerSelection = computerPlay();
-
-        // Computer player takes random parameter for turn 
-        function computerPlay() {
-            let random = Math.random();
-            if (random >= 0 && random < 0.33) {
-                return "Rock";
-            } else if (random >= 0.33 && random < 0.66) {
-                return "Paper";
-            } else {
-                return "Scissors";
-            }
-        }
-
-        game();
-
-        //Repeats the game in a loop 5 times over 
-        function game() {
-
-            let playerWin = 0;
-            let computerWin = 0;
-
-            for(let i = 0; i < 5; i++){
-                console.log(playRound(prompt('Rock, Paper, or Scissors?', ""), computerPlay()));
-            }
-
-            if (playerWin > computerWin){
-                console.log('Congrats! You won the game')
-            } else if (computerWin > playerWin){
-                console.log('You have lost the game!')
-            } else {
-                console.log('You Tied.')
-            }
-
-            //Plays Round by taking players selection and computers selection
-            //Decides who is winner from the selection provided
-            function playRound(playerSelection, computerSelection) {
-                playerSelect = playerSelection.toLowerCase()
-                computerSelect = computerSelection.toLowerCase()
-                const rock = 'Rock'.toLowerCase();
-                const paper = 'Paper'.toLowerCase();
-                const scissors = 'Scissors'.toLowerCase();
-
-                if (playerSelect === rock && computerSelect != rock && computerSelect != paper) {
-                    playerWin++;
-                    return (`You win! Rock beats Scissors`)
-                } else if (playerSelect === paper && computerSelect != paper && computerSelect != scissors) {
-                    playerWin++;
-                    return (`You win! Paper beats Rock`)
-                } else if (playerSelect === scissors && computerSelect != scissors && computerSelect != rock) {
-                    playerWin++;
-                    return (`You win! Scissors beats Paper`)
-                } else if (playerSelect === rock && computerSelect === rock || playerSelect === paper && computerSelect === paper || playerSelect == scissors && computerSelect == scissors) {
-                    return (`You Tied! ${computerSelect} ties ${playerSelect}`)
-                } else {
-                    computerWin++;
-                    return (`You Lose! ${computerSelect} beats ${playerSelect}`)
-                }
-            }
-        }
-
-    </script>
+   
 </body>
 
 </html>
