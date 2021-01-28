@@ -55,6 +55,9 @@ background-repeat: no-repeat;
 }
 
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2rem;
   margin: 0 1rem;
   width: 100%;
